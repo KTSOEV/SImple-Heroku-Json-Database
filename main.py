@@ -1,7 +1,7 @@
 from pysondb import db
 from flask import request, Flask, jsonify
 app = Flask(__name__)
-a = db.getDb("static/db")
+a = db.getDb("static/db.json")
 
 @app.route('/', methods=['GET'])
 def get():
