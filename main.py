@@ -18,4 +18,4 @@ def delete():
     a.deleteAll()
     return jsonify(a.getAll())
 
-app.run(debug=False)
+app.run(debug=True)
