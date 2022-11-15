@@ -18,8 +18,12 @@ def get():
 def put():
     if(request.args.get("auth") == authToken):
         a.deleteAll()
+        #loads(a.getAll)[""][0].pop()
         a.addMany(request.json)
-        return jsonify(a.getAll())
+        request.json[0].pop("id")
+        a.deleteAll()
+        a.addMany(request.json)
+        return jsonify(request.json)
     else:
         return "<h1 style=\"color:red\">ERROR: not authenticated</h1>"
 
